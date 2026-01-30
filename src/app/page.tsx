@@ -1,7 +1,27 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { tasks, type Task, type TaskStatus } from "@/lib/tasks";
+import { createClient } from '@supabase/supabase-js';
+
+// Server-side Supabase client
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+type TaskStatus = 'backlog' | 'todo' | 'in-progress' | 'completed';
+
+interface Task {
+  id: string;
+  title: string;
+  description?: string;
+  status: TaskStatus;
+  priority: string;
+  project?: string;
+  created_at: string;
+  updated_at: string;
+  completed_at?: string;
+}
 
 const statusConfig: Record<TaskStatus, { label: string; color: string }> = {
   'backlog': { label: 'Backlog', color: 'bg-gray-500' },
@@ -23,8 +43,8 @@ function TaskCard({ task }: { task: Task }) {
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <code className="text-xs text-muted-foreground">{task.id}</code>
-          <Badge variant={priorityConfig[task.priority].variant}>
-            {priorityConfig[task.priority].label}
+          <Badge variant={priorityConfig[task.priority]?.variant || 'secondary'}>
+            {priorityConfig[task.priority]?.label || task.priority}
           </Badge>
         </div>
         <CardTitle className="text-base">{task.title}</CardTitle>
@@ -66,7 +86,25 @@ function TaskColumn({ status, tasks }: { status: TaskStatus; tasks: Task[] }) {
   );
 }
 
-export default function Home() {
+async function getTasks(): Promise<Task[]> {
+  const { data, error } = await supabase
+    .from('tasks')
+    .select('*')
+    .order('created_at', { ascending: true });
+
+  if (error) {
+    console.error('Error fetching tasks:', error);
+    return [];
+  }
+
+  return data || [];
+}
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function Home() {
+  const tasks = await getTasks();
+  
   const stats = {
     total: tasks.length,
     completed: tasks.filter(t => t.status === 'completed').length,
