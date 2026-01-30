@@ -13,7 +13,7 @@ export interface Task {
   completedAt?: string;
 }
 
-// Tasks - Updated 2026-01-30 10:45 UTC
+// Tasks - Updated 2026-01-30 10:55 UTC
 export const tasks: Task[] = [
   // === COMPLETED: Infrastructure ===
   {
@@ -63,7 +63,7 @@ export const tasks: Task[] = [
     completedAt: '2026-01-30T09:05:00Z',
   },
 
-  // === COMPLETED: PCC Smart Contracts (Basic) ===
+  // === COMPLETED: PCC Smart Contracts ===
   {
     id: 'PCC-001',
     title: 'Set up Foundry project',
@@ -88,8 +88,8 @@ export const tasks: Task[] = [
   },
   {
     id: 'PCC-003',
-    title: 'Write PoolFactory.sol',
-    description: 'Factory for creating pools, registry, events',
+    title: 'Write PoolFactory.sol + ShareToken.sol',
+    description: 'Factory for creating pools, ERC20 share tokens for membership',
     status: 'completed',
     priority: 'high',
     project: 'Peer Credit Circles',
@@ -99,25 +99,47 @@ export const tasks: Task[] = [
   },
   {
     id: 'PCC-004',
-    title: 'Write ShareToken.sol',
-    description: 'ERC20 share tokens for pool membership',
-    status: 'completed',
-    priority: 'high',
-    project: 'Peer Credit Circles',
-    createdAt: '2026-01-30T09:25:00Z',
-    updatedAt: '2026-01-30T10:00:00Z',
-    completedAt: '2026-01-30T10:00:00Z',
-  },
-  {
-    id: 'PCC-005',
-    title: 'Write basic unit tests',
-    description: '14 unit tests covering deposits, requests, voting, withdrawal',
+    title: 'Write unit tests (14 tests)',
+    description: 'Deposits, requests, voting, withdrawal, share tokens',
     status: 'completed',
     priority: 'high',
     project: 'Peer Credit Circles',
     createdAt: '2026-01-30T09:25:00Z',
     updatedAt: '2026-01-30T10:15:00Z',
     completedAt: '2026-01-30T10:15:00Z',
+  },
+  {
+    id: 'PCC-005',
+    title: 'Write security tests (18 tests)',
+    description: 'Access control, double actions, timing attacks, overflow, collateral',
+    status: 'completed',
+    priority: 'high',
+    project: 'Peer Credit Circles',
+    createdAt: '2026-01-30T10:45:00Z',
+    updatedAt: '2026-01-30T10:55:00Z',
+    completedAt: '2026-01-30T10:55:00Z',
+  },
+  {
+    id: 'PCC-006',
+    title: 'Write fuzz tests',
+    description: 'Fuzz testing for amounts, timing, voting thresholds',
+    status: 'completed',
+    priority: 'high',
+    project: 'Peer Credit Circles',
+    createdAt: '2026-01-30T10:45:00Z',
+    updatedAt: '2026-01-30T10:55:00Z',
+    completedAt: '2026-01-30T10:55:00Z',
+  },
+  {
+    id: 'PCC-007',
+    title: 'Write invariant tests',
+    description: 'Contract invariants: balance, share supply, solvency',
+    status: 'completed',
+    priority: 'high',
+    project: 'Peer Credit Circles',
+    createdAt: '2026-01-30T10:45:00Z',
+    updatedAt: '2026-01-30T10:55:00Z',
+    completedAt: '2026-01-30T10:55:00Z',
   },
 
   // === COMPLETED: PCC Mini App (MVP) ===
@@ -144,64 +166,24 @@ export const tasks: Task[] = [
     completedAt: '2026-01-30T10:45:00Z',
   },
 
-  // === IN PROGRESS: Smart Contracts Production Ready ===
-  {
-    id: 'PCC-006',
-    title: 'Add fuzz tests',
-    description: 'Fuzz testing for edge cases: amounts, timing, voting thresholds',
-    status: 'in-progress',
-    priority: 'high',
-    project: 'Peer Credit Circles',
-    createdAt: '2026-01-30T10:45:00Z',
-    updatedAt: '2026-01-30T10:45:00Z',
-  },
-  {
-    id: 'PCC-007',
-    title: 'Add invariant tests',
-    description: 'Contract invariants: balance consistency, share supply, no double claims',
-    status: 'todo',
-    priority: 'high',
-    project: 'Peer Credit Circles',
-    createdAt: '2026-01-30T10:45:00Z',
-    updatedAt: '2026-01-30T10:45:00Z',
-  },
-  {
-    id: 'PCC-008',
-    title: 'Add edge case unit tests',
-    description: 'Boundary conditions, reentrancy, overflow, access control',
-    status: 'todo',
-    priority: 'high',
-    project: 'Peer Credit Circles',
-    createdAt: '2026-01-30T10:45:00Z',
-    updatedAt: '2026-01-30T10:45:00Z',
-  },
-  {
-    id: 'PCC-009',
-    title: 'Gas optimization review',
-    description: 'Storage packing, loop optimization, events',
-    status: 'todo',
-    priority: 'medium',
-    project: 'Peer Credit Circles',
-    createdAt: '2026-01-30T10:45:00Z',
-    updatedAt: '2026-01-30T10:45:00Z',
-  },
-
-  // === TODO: Frontend CSS Fix ===
+  // === IN PROGRESS: Frontend CSS Fix ===
   {
     id: 'PCC-UI-003',
     title: 'Fix Tailwind CSS not applying',
     description: 'CSS not loading on deployed app - investigate and fix',
-    status: 'todo',
+    status: 'in-progress',
     priority: 'urgent',
     project: 'Peer Credit Circles',
     createdAt: '2026-01-30T10:45:00Z',
-    updatedAt: '2026-01-30T10:45:00Z',
+    updatedAt: '2026-01-30T10:55:00Z',
   },
+
+  // === TODO: Polish ===
   {
     id: 'PCC-UI-004',
     title: 'Polish UI components',
     description: 'Better styling, animations, responsive design',
-    status: 'backlog',
+    status: 'todo',
     priority: 'medium',
     project: 'Peer Credit Circles',
     createdAt: '2026-01-30T10:45:00Z',
