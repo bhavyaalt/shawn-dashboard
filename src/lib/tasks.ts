@@ -13,21 +13,20 @@ export interface Task {
   completedAt?: string;
 }
 
-// Tasks - Updated 2026-01-30 11:20 UTC
+// Tasks - Updated 2026-01-30 11:22 UTC
 export const tasks: Task[] = [
-  // === IN PROGRESS ===
+  // === COMPLETED ===
   {
     id: 'PCC-UI-003',
     title: 'Fix Tailwind CSS + Deploy to Vercel',
-    description: 'CSS not loading - added tailwind config, triggering Vercel prod deploy',
-    status: 'in-progress',
+    description: 'Added tailwind config, deployed to prod. Live at pcc-miniapp.vercel.app',
+    status: 'completed',
     priority: 'urgent',
     project: 'Peer Credit Circles',
     createdAt: '2026-01-30T10:45:00Z',
-    updatedAt: '2026-01-30T11:20:00Z',
+    updatedAt: '2026-01-30T11:22:00Z',
+    completedAt: '2026-01-30T11:22:00Z',
   },
-
-  // === COMPLETED ===
   {
     id: 'SHAWN-001',
     title: 'Build Shawn Dashboard',
