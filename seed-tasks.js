@@ -37,24 +37,24 @@ const tasks = [
     priority: 'high',
     project: 'Infrastructure',
     created_at: '2026-01-30T09:30:00Z',
-    updated_at: '2026-01-30T09:45:00Z',
-    completed_at: '2026-01-30T09:45:00Z',
+    updated_at: '2026-01-30T09:50:00Z',
+    completed_at: '2026-01-30T09:50:00Z',
+  },
+  {
+    id: 'SHAWN-004',
+    title: 'Add dark mode to dashboard',
+    description: 'Better for the eyes',
+    status: 'completed',
+    priority: 'medium',
+    project: 'Infrastructure',
+    created_at: '2026-01-30T09:50:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
+    completed_at: '2026-01-30T09:55:00Z',
   },
 
   // === COMPLETED: Learning ===
   {
     id: 'LEARN-001',
-    title: 'Research Peer Credit Circles',
-    description: 'Deep dive into group lending mechanics, smart contract patterns, existing solutions',
-    status: 'completed',
-    priority: 'high',
-    project: 'Learning',
-    created_at: '2026-01-30T08:45:00Z',
-    updated_at: '2026-01-30T09:00:00Z',
-    completed_at: '2026-01-30T09:00:00Z',
-  },
-  {
-    id: 'LEARN-002',
     title: 'Study Farcaster Mini Apps',
     description: 'OnchainKit, MiniKit SDK, manifest config, auth flow',
     status: 'completed',
@@ -65,7 +65,7 @@ const tasks = [
     completed_at: '2026-01-30T09:05:00Z',
   },
   {
-    id: 'LEARN-003',
+    id: 'LEARN-002',
     title: 'Study Scaffold-ETH 2',
     description: 'Hooks, deployment patterns, hot reload',
     status: 'completed',
@@ -76,7 +76,7 @@ const tasks = [
     completed_at: '2026-01-30T09:05:00Z',
   },
   {
-    id: 'LEARN-004',
+    id: 'LEARN-003',
     title: 'Study Smart Contract Security',
     description: 'ReentrancyGuard, CEI pattern, SafeERC20, access control',
     status: 'completed',
@@ -87,7 +87,7 @@ const tasks = [
     completed_at: '2026-01-30T09:05:00Z',
   },
   {
-    id: 'LEARN-005',
+    id: 'LEARN-004',
     title: 'Study Foundry Testing',
     description: 'Fuzz testing, invariant testing, coverage-guided fuzzing',
     status: 'completed',
@@ -97,140 +97,102 @@ const tasks = [
     updated_at: '2026-01-30T09:15:00Z',
     completed_at: '2026-01-30T09:15:00Z',
   },
+
+  // === IN PROGRESS: Research PCC (Correct understanding!) ===
   {
-    id: 'LEARN-006',
-    title: 'Study Account Abstraction',
-    description: 'ERC-4337, Paymasters, Bundlers, Smart Wallets',
-    status: 'completed',
-    priority: 'medium',
-    project: 'Learning',
-    created_at: '2026-01-30T09:10:00Z',
-    updated_at: '2026-01-30T09:15:00Z',
-    completed_at: '2026-01-30T09:15:00Z',
-  },
-  {
-    id: 'LEARN-007',
-    title: 'Study OpenZeppelin Patterns',
-    description: 'Ownable, AccessControl, Upgradeable, TimelockController',
-    status: 'completed',
-    priority: 'medium',
-    project: 'Learning',
-    created_at: '2026-01-30T09:20:00Z',
-    updated_at: '2026-01-30T09:20:00Z',
-    completed_at: '2026-01-30T09:20:00Z',
+    id: 'PCC-RESEARCH-001',
+    title: 'Research Peer Credit Circles (CORRECT concept)',
+    description: 'Friend group pools funds → Projects request funding → Group votes → Project uses funds & rewards group proportionally',
+    status: 'in-progress',
+    priority: 'urgent',
+    project: 'Peer Credit Circles',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
 
-  // === COMPLETED: PCC Smart Contracts ===
+  // === TODO: PCC Smart Contracts (Need to rewrite!) ===
   {
     id: 'PCC-001',
-    title: 'Set up Foundry project',
-    description: 'Initialize Foundry, OpenZeppelin deps, folder structure',
-    status: 'completed',
+    title: 'Design PCC contract architecture',
+    description: 'Pool.sol for fund pooling, FundingRequest.sol for project proposals, voting mechanism, reward distribution',
+    status: 'todo',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:40:00Z',
-    completed_at: '2026-01-30T09:40:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-002',
-    title: 'Write Circle.sol contract',
-    description: 'Core logic: members, contributions, distribution, collateral, slashing',
-    status: 'completed',
+    title: 'Write Pool.sol contract',
+    description: 'Friends deposit funds, track shares proportionally, manage pool lifecycle',
+    status: 'todo',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:40:00Z',
-    completed_at: '2026-01-30T09:40:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-003',
-    title: 'Write CircleFactory.sol',
-    description: 'Factory for creating circles, registry, events',
-    status: 'completed',
+    title: 'Write FundingRequest.sol',
+    description: 'Projects submit requests, specify amount, terms, reward structure',
+    status: 'todo',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:40:00Z',
-    completed_at: '2026-01-30T09:40:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-004',
-    title: 'Write unit tests',
-    description: '15 unit tests covering join, contribute, distribute, slash, exit',
-    status: 'completed',
+    title: 'Write Voting mechanism',
+    description: 'Pool members vote on funding requests, quorum rules, vote weight by share',
+    status: 'todo',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:40:00Z',
-    completed_at: '2026-01-30T09:40:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-005',
-    title: 'Write fuzz tests',
-    description: '5 fuzz tests: collateral calc, timing, slashing amounts',
-    status: 'completed',
+    title: 'Write RewardDistributor.sol',
+    description: 'Distribute project rewards to pool members proportional to their contribution',
+    status: 'todo',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:40:00Z',
-    completed_at: '2026-01-30T09:40:00Z',
-  },
-  {
-    id: 'PCC-006',
-    title: 'Write invariant tests',
-    description: '7 invariants: balance, member count, no double claims, period bounds',
-    status: 'completed',
-    priority: 'high',
-    project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:40:00Z',
-    completed_at: '2026-01-30T09:40:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
 
-  // === IN PROGRESS: PCC Mini App ===
+  // === BACKLOG: PCC UI & Deployment ===
   {
     id: 'PCC-UI-001',
-    title: 'Build Home Screen',
-    description: 'Dashboard: user circles, pending actions, stats',
-    status: 'in-progress',
+    title: 'Build Pool Dashboard',
+    description: 'Show pool balance, member shares, pending requests, past fundings',
+    status: 'backlog',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:45:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-UI-002',
-    title: 'Build Create Circle Flow',
-    description: 'Form: name, contribution amount, period, max members',
-    status: 'todo',
+    title: 'Build Create Pool Flow',
+    description: 'Name, initial deposit, invite friends',
+    status: 'backlog',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:25:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-UI-003',
-    title: 'Build Circle Detail View',
-    description: 'Members list, contribution timeline, actions',
-    status: 'todo',
+    title: 'Build Funding Request Flow',
+    description: 'Projects submit request, pool members vote, track status',
+    status: 'backlog',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:25:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
-  {
-    id: 'PCC-UI-004',
-    title: 'Build Join & Contribute Flows',
-    description: 'Stake collateral, make contributions, claim pot',
-    status: 'todo',
-    priority: 'high',
-    project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:25:00Z',
-  },
-
-  // === BACKLOG: Deployment ===
   {
     id: 'PCC-DEPLOY-001',
     title: 'Deploy to Base Sepolia',
@@ -238,8 +200,8 @@ const tasks = [
     status: 'backlog',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:25:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
   {
     id: 'PCC-DEPLOY-002',
@@ -248,19 +210,19 @@ const tasks = [
     status: 'backlog',
     priority: 'high',
     project: 'Peer Credit Circles',
-    created_at: '2026-01-30T09:25:00Z',
-    updated_at: '2026-01-30T09:25:00Z',
+    created_at: '2026-01-30T09:55:00Z',
+    updated_at: '2026-01-30T09:55:00Z',
   },
 ];
 
 async function seed() {
-  console.log('Seeding tasks...');
+  console.log('Seeding tasks with CORRECTED PCC understanding...');
   
   // First, clear existing tasks
   const { error: deleteError } = await supabase
     .from('tasks')
     .delete()
-    .neq('id', '');  // Delete all rows
+    .neq('id', '');
   
   if (deleteError) {
     console.error('Error clearing tasks:', deleteError);
@@ -278,7 +240,7 @@ async function seed() {
     return;
   }
 
-  console.log(`✅ Seeded ${tasks.length} tasks successfully!`);
+  console.log(`✅ Seeded ${tasks.length} tasks with CORRECT PCC concept!`);
 }
 
 seed();
